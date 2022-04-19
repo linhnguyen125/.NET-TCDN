@@ -1,0 +1,82 @@
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.csproj.AssemblyReference.cache
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.AssemblyInfoInputs.cache
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.AssemblyInfo.cs
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.csproj.CoreCompileInputs.cache
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.MvcApplicationPartsAssemblyInfo.cs
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.MvcApplicationPartsAssemblyInfo.cache
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\appsettings.Development.json
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\appsettings.json
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.exe
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.deps.json
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.runtimeconfig.json
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.pdb
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\Dapper.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\MySqlConnector.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\MISA.Core.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\MISA.Infrastructure.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\MISA.Core.pdb
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\MISA.Infrastructure.pdb
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\staticwebassets.build.json
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\staticwebassets.development.json
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\scopedcss\bundle\MISA.WebApi.styles.css
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.csproj.CopyComplete
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\refint\MISA.WebApi.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.pdb
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.genruntimeconfig.cache
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\obj\Debug\net6.0\ref\MISA.WebApi.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\EPPlus.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\MISA.WebApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\appsettings.Development.json
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\appsettings.json
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.exe
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.deps.json
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.runtimeconfig.json
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.pdb
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\Dapper.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\EPPlus.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\MISA.Core.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\MISA.Core.pdb
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.csproj.AssemblyReference.cache
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.AssemblyInfoInputs.cache
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.AssemblyInfo.cs
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.csproj.CoreCompileInputs.cache
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.MvcApplicationPartsAssemblyInfo.cs
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.MvcApplicationPartsAssemblyInfo.cache
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\staticwebassets.build.json
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\staticwebassets.development.json
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\scopedcss\bundle\MISA.WebApi.styles.css
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.csproj.CopyComplete
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\refint\MISA.WebApi.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.pdb
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.genruntimeconfig.cache
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\ref\MISA.WebApi.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\Npgsql.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\MISA.Infrastructure.Postgres.dll
+D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\MISA.Infrastructure.Postgres.pdb
