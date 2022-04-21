@@ -4764,19 +4764,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\OooO\\.nuget\\packages\\": {}
+    "C:\\Users\\NC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MISA\\WEB2022_01\\mf1064-nvlinh\\.Net Core\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
+      "projectUniqueName": "F:\\MISA\\.NET-TCDN\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
       "projectName": "MISA.Infrastructure",
-      "projectPath": "D:\\MISA\\WEB2022_01\\mf1064-nvlinh\\.Net Core\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\OooO\\.nuget\\packages\\",
-      "outputPath": "D:\\MISA\\WEB2022_01\\mf1064-nvlinh\\.Net Core\\MISA.Infrastructure\\obj\\",
+      "projectPath": "F:\\MISA\\.NET-TCDN\\MISA.Infrastructure\\MISA.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\NC\\.nuget\\packages\\",
+      "outputPath": "F:\\MISA\\.NET-TCDN\\MISA.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\OooO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4838,7 +4838,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

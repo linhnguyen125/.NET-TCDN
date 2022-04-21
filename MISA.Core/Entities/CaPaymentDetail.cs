@@ -14,17 +14,16 @@ namespace MISA.Core.Entities
         public Guid ca_payment_detail_id { get; set; }
 
         [MISAColumn]
-        [MISARequired]
-        public string account_object_code { get; set; }
+        public string? account_object_code { get; set; }
 
         [MISAColumn]
-        public Guid account_object_id { get; set; }
+        public Guid? account_object_id { get; set; }
 
         [MISAColumn]
         public string? account_object_name { get; set; }
 
         [MISAColumn]
-        public decimal? amount { get; set; }
+        public decimal? amount_oc { get; set; }
 
         [MISAColumn]
         public string? credit_account { get; set; }
@@ -36,6 +35,6 @@ namespace MISA.Core.Entities
         public string? description { get; set; }
 
         [MISAColumn]
-        public Guid refid { get; set; }
+        public Guid? refid { get; set; }
     }
 }

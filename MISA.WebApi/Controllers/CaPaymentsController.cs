@@ -15,5 +15,25 @@ namespace MISA.WebApi.Controllers
             _caPaymentRepository = caPaymentRepository;
             _caPaymentService = caPaymentService;
         }
+
+        /// <summary>
+        /// Lấy danh sách nhân viên có phân trang
+        /// </summary>
+        /// <param name="filterObject"></param>
+        /// <returns></returns>
+        /// CreatedBy: NVLINH (09/03/2022)
+        [HttpPost("filter")]
+        public IActionResult GetPaging(FilterObject filterObject)
+        {
+            try
+            {
+                var res = _caPaymentRepository.GetPaging(filterObject);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
     }
 }

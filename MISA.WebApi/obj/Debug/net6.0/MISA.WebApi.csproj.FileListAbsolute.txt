@@ -80,3 +80,44 @@ D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\obj\Debug\net6.0\ref\MISA
 D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\Npgsql.dll
 D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\MISA.Infrastructure.Postgres.dll
 D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.WebApi\bin\Debug\net6.0\MISA.Infrastructure.Postgres.pdb
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\appsettings.Development.json
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\appsettings.json
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.exe
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.deps.json
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.runtimeconfig.json
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\MISA.WebApi.pdb
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\Dapper.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\EPPlus.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\Microsoft.IO.RecyclableMemoryStream.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\Npgsql.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\System.Drawing.Common.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\System.Xml.XPath.XmlDocument.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\MISA.Core.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\MISA.Infrastructure.Postgres.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\MISA.Core.pdb
+F:\MISA\.NET-TCDN\MISA.WebApi\bin\Debug\net6.0\MISA.Infrastructure.Postgres.pdb
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.csproj.AssemblyReference.cache
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.GeneratedMSBuildEditorConfig.editorconfig
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.AssemblyInfoInputs.cache
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.AssemblyInfo.cs
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.csproj.CoreCompileInputs.cache
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.MvcApplicationPartsAssemblyInfo.cs
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.MvcApplicationPartsAssemblyInfo.cache
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\staticwebassets.build.json
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\staticwebassets.development.json
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\scopedcss\bundle\MISA.WebApi.styles.css
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.csproj.CopyComplete
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\refint\MISA.WebApi.dll
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.pdb
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\MISA.WebApi.genruntimeconfig.cache
+F:\MISA\.NET-TCDN\MISA.WebApi\obj\Debug\net6.0\ref\MISA.WebApi.dll

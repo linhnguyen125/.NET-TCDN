@@ -15,9 +15,7 @@ namespace MISA.Infrastructure.Postgres.Repository
         /// <summary>
         /// Thực hiện lấy dữ liệu nhân viên có phân trang
         /// </summary>
-        /// <param name="pageSize"></param>
-        /// <param name="pageNumber"></param>
-        /// <param name="txtSearch"></param>
+        /// <param name="filterObject"></param>
         /// <returns></returns>
         /// CreatedBy: NVLINH (10/03/2022)
         public Object GetPaging(FilterObject filterObject)

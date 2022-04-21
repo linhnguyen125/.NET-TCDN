@@ -57,6 +57,7 @@ namespace MISA.Infrastructure.Postgres.Repository
                 // Tạo id và ngày tạo
                 entity.GetType().GetProperty($"{_tableName}_id").SetValue(entity, Guid.NewGuid());
                 entity.GetType().GetProperty("created_date").SetValue(entity, DateTime.UtcNow);
+
                 // CÁCH 1: Dùng Function / Procedure
                 //// Gọi proc
                 //var sqlCommandText = $"proc_insert_{_tableName}";
@@ -120,6 +121,77 @@ namespace MISA.Infrastructure.Postgres.Repository
                 return res;
             }
         }
+        public virtual int Insert(MISAEntity entity, NpgsqlTransaction transaction)
+        {
+            using (var npgConnection = new NpgsqlConnection(ConnectionString))
+            {
+                // Tạo id và ngày tạo
+                entity.GetType().GetProperty($"{_tableName}_id").SetValue(entity, Guid.NewGuid());
+                entity.GetType().GetProperty("created_date").SetValue(entity, DateTime.UtcNow);
+
+                // CÁCH 1: Dùng Function / Procedure
+                //// Gọi proc
+                //var sqlCommandText = $"proc_insert_{_tableName}";
+                //// Khởi tạo dynamic params
+                //DynamicParameters parameters = new DynamicParameters();
+                //// Mở kết nối tới database
+                //npgConnection.Open();
+                //// Đọc các tham số đầu vào của store
+                //var sqlcommand = npgConnection.CreateCommand();
+                //sqlcommand.CommandText = sqlCommandText;
+                //sqlcommand.CommandType = System.Data.CommandType.StoredProcedure;
+                //NpgsqlCommandBuilder.DeriveParameters(sqlcommand);
+
+                //foreach (NpgsqlParameter param in sqlcommand.Parameters)
+                //{
+                //    // Tên của tham số
+                //    var paramName = param.ParameterName;
+                //    // Tên của Property
+                //    var propertyName = paramName.Replace("ms_", "");
+                //    // Lấy giá trị của property
+                //    var entityProperty = entity.GetType().GetProperty(propertyName);
+                //    if (entityProperty != null)
+                //    {
+                //        var propertyValue = entityProperty.GetValue(entity);
+                //        // Thực hiện gán giá trị cho các params
+                //        parameters.Add(paramName, propertyValue);
+                //    }
+                //    else
+                //    {
+                //        // Thực hiện gán giá trị cho các params
+                //        parameters.Add(paramName, null);
+                //    }
+                //}
+
+                //var res = npgConnection.Execute(sql: sqlCommandText, param: parameters, commandType: System.Data.CommandType.StoredProcedure);
+                //// Đóng kết nối database
+                //npgConnection.Close();
+                //// Trả về kết quả
+                //return res;
+
+                // CÁCH 2: Dùng query
+                var columns = GetTableColumns();
+                var sqlCommand = new StringBuilder();
+                sqlCommand.Append($"INSERT INTO {_tableName}(");
+                for (var i = 0; i < columns.Count(); i++)
+                {
+                    if (i > 0) { sqlCommand.Append(", "); }
+                    sqlCommand.Append($"{columns[i]}");
+                }
+                sqlCommand.Append(") VALUES(");
+                for (var i = 0; i < columns.Count(); i++)
+                {
+                    if (i > 0) { sqlCommand.Append(", "); }
+                    sqlCommand.Append($"@{columns[i]}");
+                }
+                sqlCommand.Append(")");
+
+                // Thêm dữ liệu vào DB:
+                //Câu lệnh truy vấn dữ liệu:
+                var res = npgConnection.Execute(sql: sqlCommand.ToString(), param: entity, transaction: transaction);
+                return res;
+            }
+        }
 
         /// <summary>
         /// Lấy thông tin theo Id
@@ -175,6 +247,7 @@ namespace MISA.Infrastructure.Postgres.Repository
             {
                 // Tạo id và ngày tạo
                 entity.GetType().GetProperty("modified_date").SetValue(entity, DateTime.UtcNow);
+
                 // CÁCH 1: Dùng function / procedure
                 //// Gọi proc
                 //var sqlCommandText = $"proc_update_{_tableName}";

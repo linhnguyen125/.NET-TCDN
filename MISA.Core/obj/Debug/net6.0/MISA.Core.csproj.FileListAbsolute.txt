@@ -26,3 +26,17 @@ D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.Core\obj\Debug\net6.0\MISA.Core.
 D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.Core\obj\Debug\net6.0\refint\MISA.Core.dll
 D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.Core\obj\Debug\net6.0\MISA.Core.pdb
 D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.Core\obj\Debug\net6.0\ref\MISA.Core.dll
+F:\MISA\.NET-TCDN\MISA.Core\bin\Debug\net6.0\MISA.Core.deps.json
+F:\MISA\.NET-TCDN\MISA.Core\bin\Debug\net6.0\MISA.Core.dll
+F:\MISA\.NET-TCDN\MISA.Core\bin\Debug\net6.0\MISA.Core.pdb
+F:\MISA\.NET-TCDN\MISA.Core\obj\Debug\net6.0\MISA.Core.csproj.AssemblyReference.cache
+F:\MISA\.NET-TCDN\MISA.Core\obj\Debug\net6.0\MISA.Core.Resources.ResourceVN.resources
+F:\MISA\.NET-TCDN\MISA.Core\obj\Debug\net6.0\MISA.Core.csproj.GenerateResource.cache
+F:\MISA\.NET-TCDN\MISA.Core\obj\Debug\net6.0\MISA.Core.GeneratedMSBuildEditorConfig.editorconfig
+F:\MISA\.NET-TCDN\MISA.Core\obj\Debug\net6.0\MISA.Core.AssemblyInfoInputs.cache
+F:\MISA\.NET-TCDN\MISA.Core\obj\Debug\net6.0\MISA.Core.AssemblyInfo.cs
+F:\MISA\.NET-TCDN\MISA.Core\obj\Debug\net6.0\MISA.Core.csproj.CoreCompileInputs.cache
+F:\MISA\.NET-TCDN\MISA.Core\obj\Debug\net6.0\MISA.Core.dll
+F:\MISA\.NET-TCDN\MISA.Core\obj\Debug\net6.0\refint\MISA.Core.dll
+F:\MISA\.NET-TCDN\MISA.Core\obj\Debug\net6.0\MISA.Core.pdb
+F:\MISA\.NET-TCDN\MISA.Core\obj\Debug\net6.0\ref\MISA.Core.dll

@@ -13,3 +13,18 @@ D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.Infrastructure.Postgres\obj\Debu
 D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.Infrastructure.Postgres\obj\Debug\net6.0\refint\MISA.Infrastructure.Postgres.dll
 D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.Infrastructure.Postgres\obj\Debug\net6.0\MISA.Infrastructure.Postgres.pdb
 D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.Infrastructure.Postgres\obj\Debug\net6.0\ref\MISA.Infrastructure.Postgres.dll
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\bin\Debug\net6.0\MISA.Infrastructure.Postgres.deps.json
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\bin\Debug\net6.0\MISA.Infrastructure.Postgres.dll
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\bin\Debug\net6.0\MISA.Infrastructure.Postgres.pdb
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\bin\Debug\net6.0\MISA.Core.dll
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\bin\Debug\net6.0\MISA.Core.pdb
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\obj\Debug\net6.0\MISA.Infrastructure.Postgres.csproj.AssemblyReference.cache
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\obj\Debug\net6.0\MISA.Infrastructure.Postgres.GeneratedMSBuildEditorConfig.editorconfig
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\obj\Debug\net6.0\MISA.Infrastructure.Postgres.AssemblyInfoInputs.cache
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\obj\Debug\net6.0\MISA.Infrastructure.Postgres.AssemblyInfo.cs
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\obj\Debug\net6.0\MISA.Infrastructure.Postgres.csproj.CoreCompileInputs.cache
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\obj\Debug\net6.0\MISA.Infrastructure.Postgres.csproj.CopyComplete
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\obj\Debug\net6.0\MISA.Infrastructure.Postgres.dll
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\obj\Debug\net6.0\refint\MISA.Infrastructure.Postgres.dll
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\obj\Debug\net6.0\MISA.Infrastructure.Postgres.pdb
+F:\MISA\.NET-TCDN\MISA.Infrastructure.Postgres\obj\Debug\net6.0\ref\MISA.Infrastructure.Postgres.dll

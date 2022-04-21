@@ -124,5 +124,7 @@ namespace MISA.Core.Entities
         /// </summary>
         [MISAColumn]
         public decimal? total_amount { get; set; }
+
+        public List<CaPaymentDetail>? ca_payment_detail { get; set; }
     }
 }

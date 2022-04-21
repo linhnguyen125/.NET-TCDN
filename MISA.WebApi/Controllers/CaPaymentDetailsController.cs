@@ -14,5 +14,24 @@ namespace MISA.WebApi.Controllers
             _caPaymentDetailRepository = caPaymentDetailRepository;
             _caPaymentDetailService = caPaymentDetailService;
         }
+
+        /// <summary>
+        /// Lấy chi tiết phiếu chi theo refid
+        /// </summary>
+        /// <param name="refid"></param>
+        /// <returns></returns>
+        [HttpGet("getByRefid")]
+        public IActionResult GetByRefid(Guid refid)
+        {
+            try
+            {
+                var res = _caPaymentDetailRepository.GetByRefid(refid);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
     }
 }

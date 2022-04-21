@@ -19,9 +19,7 @@ namespace MISA.WebApi.Controllers
         /// <summary>
         /// Lấy danh sách nhân viên có phân trang
         /// </summary>
-        /// <param name="pageSize"></param>
-        /// <param name="pageNumber"></param>
-        /// <param name="txtSearch"></param>
+        /// <param name="filterObject"></param>
         /// <returns></returns>
         /// CreatedBy: NVLINH (09/03/2022)
         [HttpPost("filter")]
@@ -38,6 +36,11 @@ namespace MISA.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Lấy account object theo mã
+        /// </summary>
+        /// <param name="account_object_code"></param>
+        /// <returns></returns>
         [HttpGet("getByCode")]
         public IActionResult GetByCode(string account_object_code)
         {

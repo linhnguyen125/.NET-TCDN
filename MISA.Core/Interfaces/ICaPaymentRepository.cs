@@ -10,5 +10,6 @@ namespace MISA.Core.Interfaces
 {
     public interface ICaPaymentRepository : IBaseRepository<CaPayment>
     {
+        public Object GetPaging(FilterObject filterObject);
     }
 }

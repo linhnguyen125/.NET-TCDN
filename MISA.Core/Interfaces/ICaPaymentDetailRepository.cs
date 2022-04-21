@@ -10,5 +10,6 @@ namespace MISA.Core.Interfaces
 {
     public interface ICaPaymentDetailRepository : IBaseRepository<CaPaymentDetail>
     {
+        public Object GetByRefid(Guid refid);
     }
 }

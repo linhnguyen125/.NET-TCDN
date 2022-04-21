@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MISA\\WEB2022_01\\mf1064-nvlinh\\.Net Core\\MISA.Core\\MISA.Core.csproj": {}
+    "F:\\MISA\\.NET-TCDN\\MISA.Core\\MISA.Core.csproj": {}
   },
   "projects": {
-    "D:\\MISA\\WEB2022_01\\mf1064-nvlinh\\.Net Core\\MISA.Core\\MISA.Core.csproj": {
+    "F:\\MISA\\.NET-TCDN\\MISA.Core\\MISA.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MISA\\WEB2022_01\\mf1064-nvlinh\\.Net Core\\MISA.Core\\MISA.Core.csproj",
+        "projectUniqueName": "F:\\MISA\\.NET-TCDN\\MISA.Core\\MISA.Core.csproj",
         "projectName": "MISA.Core",
-        "projectPath": "D:\\MISA\\WEB2022_01\\mf1064-nvlinh\\.Net Core\\MISA.Core\\MISA.Core.csproj",
-        "packagesPath": "C:\\Users\\OooO\\.nuget\\packages\\",
-        "outputPath": "D:\\MISA\\WEB2022_01\\mf1064-nvlinh\\.Net Core\\MISA.Core\\obj\\",
+        "projectPath": "F:\\MISA\\.NET-TCDN\\MISA.Core\\MISA.Core.csproj",
+        "packagesPath": "C:\\Users\\NC\\.nuget\\packages\\",
+        "outputPath": "F:\\MISA\\.NET-TCDN\\MISA.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\OooO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\NC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

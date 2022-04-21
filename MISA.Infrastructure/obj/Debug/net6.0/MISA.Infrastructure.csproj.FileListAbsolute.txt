@@ -25,3 +25,15 @@ D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.Infrastructure\obj\Debug\net6.0\
 D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.Infrastructure\obj\Debug\net6.0\refint\MISA.Infrastructure.dll
 D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.Infrastructure\obj\Debug\net6.0\MISA.Infrastructure.pdb
 D:\MISA\WEB2022_01\mf1064-nvlinh\.Net Core\MISA.Infrastructure\obj\Debug\net6.0\ref\MISA.Infrastructure.dll
+F:\MISA\.NET-TCDN\MISA.Infrastructure\bin\Debug\net6.0\MISA.Infrastructure.deps.json
+F:\MISA\.NET-TCDN\MISA.Infrastructure\bin\Debug\net6.0\MISA.Infrastructure.dll
+F:\MISA\.NET-TCDN\MISA.Infrastructure\bin\Debug\net6.0\MISA.Infrastructure.pdb
+F:\MISA\.NET-TCDN\MISA.Infrastructure\obj\Debug\net6.0\MISA.Infrastructure.csproj.AssemblyReference.cache
+F:\MISA\.NET-TCDN\MISA.Infrastructure\obj\Debug\net6.0\MISA.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\MISA\.NET-TCDN\MISA.Infrastructure\obj\Debug\net6.0\MISA.Infrastructure.AssemblyInfoInputs.cache
+F:\MISA\.NET-TCDN\MISA.Infrastructure\obj\Debug\net6.0\MISA.Infrastructure.AssemblyInfo.cs
+F:\MISA\.NET-TCDN\MISA.Infrastructure\obj\Debug\net6.0\MISA.Infrastructure.csproj.CoreCompileInputs.cache
+F:\MISA\.NET-TCDN\MISA.Infrastructure\obj\Debug\net6.0\MISA.Infrastructure.dll
+F:\MISA\.NET-TCDN\MISA.Infrastructure\obj\Debug\net6.0\refint\MISA.Infrastructure.dll
+F:\MISA\.NET-TCDN\MISA.Infrastructure\obj\Debug\net6.0\MISA.Infrastructure.pdb
+F:\MISA\.NET-TCDN\MISA.Infrastructure\obj\Debug\net6.0\ref\MISA.Infrastructure.dll

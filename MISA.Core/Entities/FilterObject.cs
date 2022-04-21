@@ -12,7 +12,7 @@ namespace MISA.Core.Entities
 
         public int page_number { get; set; }
 
-        public string category { get; set; }
+        public string? category { get; set; }
 
         public string? txt_search { get; set; }
 
