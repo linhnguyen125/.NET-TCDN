@@ -97,6 +97,100 @@ namespace MISA.Infrastructure.Postgres.Repository
         }
 
         /// <summary>
+        /// Hàm cập nhật phiếu chi
+        /// </summary>
+        /// <param name="payment"></param>
+        /// <returns></returns>
+        /// CreatedBy: NVLINH(19/04/2022)
+        public override int Update(CaPayment payment)
+        {
+            // Tạo id và ngày tạo
+            var id = Guid.NewGuid();
+            payment.GetType().GetProperty("created_date").SetValue(payment, DateTime.UtcNow);
+
+            using (var npgConnection = new NpgsqlConnection(ConnectionString))
+            {
+                npgConnection.Open();
+
+                using (var transaction = npgConnection.BeginTransaction())
+                {
+                    CaPaymentDetailRepository _paymentDetailRepo = new CaPaymentDetailRepository();
+                    try
+                    {
+                        // Lấy ra key của bảng
+                        var key = GetTableKey();
+                        // Lấy ra các cột của bảng
+                        var columns = GetTableColumns();
+                        var sqlCommand = new StringBuilder();
+                        // Tạo câu lệnh truy vấn
+                        sqlCommand.Append($"UPDATE {_tableName} SET");
+                        var hasColumn = false;
+                        for (var i = 0; i < columns.Count(); i++)
+                        {
+                            var column = columns[i];
+                            if (column == key)
+                            {
+                                continue;
+                            }
+
+                            if (hasColumn) { sqlCommand.Append(","); }
+                            sqlCommand.Append($" {column}=@{column}");
+                            hasColumn = true;
+                        }
+                        sqlCommand.Append($" WHERE {key}= @{key}");
+
+                        // thực hiện truy vấn
+                        var res = npgConnection.Execute(sql: sqlCommand.ToString(), param: payment, transaction: transaction);
+
+                        // Cập nhật bảng detail
+                        // lấy key bảng detail
+                        var keyDetail = _paymentDetailRepo.GetTableKey();
+                        // lấy columns bảng detail
+                        var columnDetails = _paymentDetailRepo.GetTableColumns();
+
+                        if (payment.ca_payment_detail.Count > 0)
+                        {
+                            foreach (var item in payment.ca_payment_detail)
+                            {
+                                // tạo câu lệnh truy vấn
+                                var sqlCommandDetail = new StringBuilder();
+                                sqlCommand.Append($"UPDATE ca_payment_detail SET");
+                                var hasColumnDetail = false;
+                                for (var i = 0; i < columnDetails.Count(); i++)
+                                {
+                                    var columnDetail = columnDetails[i];
+                                    if (columnDetail == keyDetail)
+                                    {
+                                        continue;
+                                    }
+
+                                    if (hasColumnDetail) { sqlCommand.Append(","); }
+                                    sqlCommand.Append($" {columnDetail}=@{columnDetail}");
+                                    hasColumn = true;
+                                }
+                                sqlCommand.Append($" WHERE {keyDetail}= @{keyDetail}");
+
+                                // thực hiện truy vấn
+                                npgConnection.Execute(sql: sqlCommandDetail.ToString(), param: item, transaction: transaction);
+                            }
+                        }
+
+                        //var res = 1;
+
+                        transaction.Commit();
+                        return res;
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        return 0;
+                    }
+                }
+
+            }
+        }
+
+        /// <summary>
         /// Thực hiện lấy dữ liệu nhân viên có phân trang
         /// </summary>
         /// <param name="filterObject"></param>

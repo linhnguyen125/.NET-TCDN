@@ -28,7 +28,7 @@ namespace MISA.Infrastructure.Postgres.Repository
                 parameters.Add("@refid", refid);
 
                 var sqlCommand = $"SELECT * FROM {_tableName} WHERE refid = @refid";
-                var res = npgConnection.QueryFirstOrDefault<CaPaymentDetail>(sql: sqlCommand, param: parameters);
+                var res = npgConnection.Query<CaPaymentDetail>(sql: sqlCommand, param: parameters);
 
                 return res;
             }
