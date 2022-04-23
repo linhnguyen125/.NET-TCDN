@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace MISA.Infrastructure.Postgres.Repository
 {
@@ -18,81 +19,48 @@ namespace MISA.Infrastructure.Postgres.Repository
         /// <param name="payment"></param>
         /// <returns></returns>
         /// CreatedBy: NVLINH(19/04/2022)
-        public override int Insert(CaPayment payment)
+        public int InsertFull(CaPayment payment)
         {
             // Tạo id và ngày tạo
             var id = Guid.NewGuid();
-            payment.GetType().GetProperty($"{_tableName}_id").SetValue(payment, id);
-            payment.GetType().GetProperty("created_date").SetValue(payment, DateTime.UtcNow);
+            payment.ca_payment_id = id;
+            payment.created_date = DateTime.UtcNow;
 
-            using (var npgConnection = new NpgsqlConnection(ConnectionString))
+            using (var trxScope = new TransactionScope())
             {
-                npgConnection.Open();
-
-                using (var transaction = npgConnection.BeginTransaction())
+                try
                 {
-                    CaPaymentDetailRepository _paymentDetailRepo = new CaPaymentDetailRepository();
-                    try
+                    var res = Insert(payment);
+
+                    if (res > 0)
                     {
-                        var columns = GetTableColumns();
-                        var sqlCommand = new StringBuilder();
-                        sqlCommand.Append($"INSERT INTO {_tableName}(");
-                        for (var i = 0; i < columns.Count(); i++)
+                        //nếu có list detail.
+                        if (payment.ca_payment_detail != null)
                         {
-                            if (i > 0) { sqlCommand.Append(", "); }
-                            sqlCommand.Append($"{columns[i]}");
-                        }
-                        sqlCommand.Append(") VALUES(");
-                        for (var i = 0; i < columns.Count(); i++)
-                        {
-                            if (i > 0) { sqlCommand.Append(", "); }
-                            sqlCommand.Append($"@{columns[i]}");
-                        }
-                        sqlCommand.Append(")");
+                            CaPaymentDetailRepository _paymentDetailRepo = new CaPaymentDetailRepository();
+                            var listDetail = payment.ca_payment_detail;
 
-                        var res = npgConnection.Execute(sql: sqlCommand.ToString(), param: payment, transaction: transaction);
-
-                        var columnsDetail = _paymentDetailRepo.GetTableColumns();
-
-                        if (payment.ca_payment_detail.Count > 0)
-                        {
-                            foreach (var item in payment.ca_payment_detail)
+                            //for trong list để thêm mới, gán id của master vào ref_id của detail.
+                            for (int i = 0; i < listDetail.Count; i++)
                             {
-                                item.ca_payment_detail_id = Guid.NewGuid();
-                                item.refid = id;
-
-                                var sqlCommandDetail = new StringBuilder();
-                                sqlCommandDetail.Append($"INSERT INTO ca_payment_detail(");
-                                for (var i = 0; i < columnsDetail.Count(); i++)
-                                {
-                                    if (i > 0) { sqlCommandDetail.Append(", "); }
-                                    sqlCommandDetail.Append($"{columnsDetail[i]}");
-                                }
-                                sqlCommandDetail.Append(") VALUES(");
-                                for (var i = 0; i < columnsDetail.Count(); i++)
-                                {
-                                    if (i > 0) { sqlCommandDetail.Append(", "); }
-                                    sqlCommandDetail.Append($"@{columnsDetail[i]}");
-                                }
-                                sqlCommandDetail.Append(")");
-                                npgConnection.Execute(sql: sqlCommandDetail.ToString(), param: item, transaction: transaction);
+                                //khởi tạo mã mới cho detail.
+                                listDetail[i].ca_payment_detail_id = Guid.NewGuid();
+                                //gán mã của master cho detail
+                                listDetail[i].refid = id;
+                                //gán ngày tạo
+                                listDetail[i].created_date = DateTime.UtcNow;
+                                //gọi hàm thêm detail
+                                _paymentDetailRepo.Insert(listDetail[i]);
                             }
                         }
-
-                        //var res = 1;
-
-                        transaction.Commit();
-                        return res;
                     }
-                    catch (Exception ex)
-                    {
-                        // roll the transaction back
-                        transaction.Rollback();
-
-                        return 0;
-                    }
+                    trxScope.Complete();
+                    return res;
                 }
-
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
             }
         }
 
@@ -102,89 +70,80 @@ namespace MISA.Infrastructure.Postgres.Repository
         /// <param name="payment"></param>
         /// <returns></returns>
         /// CreatedBy: NVLINH(19/04/2022)
-        public override int Update(CaPayment payment)
+        public int UpdateFull(CaPayment payment)
         {
-            // Tạo id và ngày tạo
-            var id = Guid.NewGuid();
-            payment.GetType().GetProperty("created_date").SetValue(payment, DateTime.UtcNow);
-
-            using (var npgConnection = new NpgsqlConnection(ConnectionString))
+            using (var trxScope = new TransactionScope())
             {
-                npgConnection.Open();
-
-                using (var transaction = npgConnection.BeginTransaction())
+                try
                 {
-                    CaPaymentDetailRepository _paymentDetailRepo = new CaPaymentDetailRepository();
-                    try
+                    payment.modified_date = DateTime.UtcNow;
+                    // cập nhật bảng cho master
+                    var res = Update(payment);
+
+                    // Cập nhật bảng detail
+                    if (res > 0)
                     {
-                        // Lấy ra key của bảng
-                        var key = GetTableKey();
-                        // Lấy ra các cột của bảng
-                        var columns = GetTableColumns();
-                        var sqlCommand = new StringBuilder();
-                        // Tạo câu lệnh truy vấn
-                        sqlCommand.Append($"UPDATE {_tableName} SET");
-                        var hasColumn = false;
-                        for (var i = 0; i < columns.Count(); i++)
+                        if (payment.ca_payment_detail != null)
                         {
-                            var column = columns[i];
-                            if (column == key)
+                            CaPaymentDetailRepository _paymentDetailRepo = new CaPaymentDetailRepository();
+                            var listDetail = payment.ca_payment_detail;
+                            //lấy hết danh sách detail đang tồn tại của master ra.
+                            var list_detail_exist = _paymentDetailRepo.GetByRefid((Guid)payment.ca_payment_id);
+                            //duyệt trong list danh sách detail của client gửi lên
+
+                            //nếu flag = xóa => xóa trong db.
+                            //nếu flag = thêm => thêm vào db.
+                            //nếu flag = sửa => sửa trong db.
+
+                            //for trong list đã tồn tại
+                            for (int i = 0; i < list_detail_exist.Count(); i++)
                             {
-                                continue;
-                            }
-
-                            if (hasColumn) { sqlCommand.Append(","); }
-                            sqlCommand.Append($" {column}=@{column}");
-                            hasColumn = true;
-                        }
-                        sqlCommand.Append($" WHERE {key}= @{key}");
-
-                        // thực hiện truy vấn
-                        var res = npgConnection.Execute(sql: sqlCommand.ToString(), param: payment, transaction: transaction);
-
-                        // Cập nhật bảng detail
-                        // lấy key bảng detail
-                        var keyDetail = _paymentDetailRepo.GetTableKey();
-                        // lấy columns bảng detail
-                        var columnDetails = _paymentDetailRepo.GetTableColumns();
-
-                        if (payment.ca_payment_detail.Count > 0)
-                        {
-                            foreach (var item in payment.ca_payment_detail)
-                            {
-                                // tạo câu lệnh truy vấn
-                                var sqlCommandDetail = new StringBuilder();
-                                sqlCommand.Append($"UPDATE ca_payment_detail SET");
-                                var hasColumnDetail = false;
-                                for (var i = 0; i < columnDetails.Count(); i++)
+                                var still_exist = false;
+                                //nếu list client gửi lên không chứa đang tồn tại => xóa, nếu chứa => cập nhật
+                                for (int j = 0; j < listDetail.Count; j++)
                                 {
-                                    var columnDetail = columnDetails[i];
-                                    if (columnDetail == keyDetail)
+                                    if (list_detail_exist.ElementAt(i).ca_payment_detail_id == listDetail[j].ca_payment_detail_id)
                                     {
-                                        continue;
+                                        still_exist = true;//vẫn đang tồn tại => gọi sửa
+                                        listDetail[j].modified_date = DateTime.UtcNow;
+                                        _paymentDetailRepo.Update(listDetail[j]);
                                     }
-
-                                    if (hasColumnDetail) { sqlCommand.Append(","); }
-                                    sqlCommand.Append($" {columnDetail}=@{columnDetail}");
-                                    hasColumn = true;
                                 }
-                                sqlCommand.Append($" WHERE {keyDetail}= @{keyDetail}");
+                                if (still_exist == false)
+                                {
+                                    //ko tồn tại thì gọi xóa
+                                    _paymentDetailRepo.Delete((Guid)list_detail_exist.ElementAt(i).ca_payment_detail_id);
+                                }
+                            }
 
-                                // thực hiện truy vấn
-                                npgConnection.Execute(sql: sqlCommandDetail.ToString(), param: item, transaction: transaction);
+                            //for trong list gửi lên, nếu ko có thì thêm mới
+                            for (int i = 0; i < listDetail.Count; i++)
+                            {
+                                var exist = false;
+                                for (int j = 0; j < list_detail_exist.Count(); j++)
+                                {
+                                    if (list_detail_exist.ElementAt(j).ca_payment_detail_id == listDetail[i].ca_payment_detail_id)
+                                    {
+                                        exist = true;
+                                        break;
+                                    }
+                                }
+                                if (exist == false)//nếu chưa tồn tại thì thêm mới
+                                {
+                                    listDetail[i].ca_payment_detail_id = Guid.NewGuid();
+                                    listDetail[i].refid = (Guid)payment.ca_payment_id;
+                                    listDetail[i].created_date = DateTime.UtcNow;
+                                    _paymentDetailRepo.Insert(listDetail[i]);
+                                }
                             }
                         }
-
-                        //var res = 1;
-
-                        transaction.Commit();
-                        return res;
                     }
-                    catch (Exception ex)
-                    {
-                        transaction.Rollback();
-                        return 0;
-                    }
+                    trxScope.Complete();
+                    return res;
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
                 }
 
             }
@@ -274,5 +233,41 @@ namespace MISA.Infrastructure.Postgres.Repository
                 return data;
             }
         }
+
+        /// <summary>
+        /// Thực hiện lấy mã nhân viên mới
+        /// </summary>
+        /// <returns></returns>
+        /// CreatedBy: NVLINH (11/03/2022)
+        public string GetNewPaymentCode()
+        {
+            string prefix = "PC";
+            var postFix = 0;
+            using (var npgConnection = new NpgsqlConnection(ConnectionString))
+            {
+                // Câu lệnh truy vấn
+                var sqlCommand = $"SELECT substring(ca_payment_code, '[0-9]+') as amount FROM {_tableName}";
+                // Lấy dữ liệu
+                var res = npgConnection.Query<int>(sql: sqlCommand);
+                // Lấy số lớn nhất trong hệ thống + 1
+                int max = 0;
+                if (res.Count() > 0)
+                {
+                    max = res.Max();
+                }
+                postFix = max + 1;
+                // Trả về mã mới nhất tăng thêm 1
+                return prefix + postFix;
+            }
+        }
+
+        //private int IntLength(int i)
+        //{
+        //    if (i < 0)
+        //        return 0;
+        //    if (i == 0)
+        //        return 1;
+        //    return (int)Math.Floor(Math.Log10(i)) + 1;
+        //}
     }
 }

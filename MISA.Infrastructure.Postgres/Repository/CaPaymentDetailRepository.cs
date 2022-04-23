@@ -20,7 +20,7 @@ namespace MISA.Infrastructure.Postgres.Repository
         /// <returns></returns>
         /// <returns></returns>
         /// CreatedBy: NVLINH (18/04/2022)
-        public Object GetByRefid(Guid refid)
+        public IEnumerable<CaPaymentDetail> GetByRefid(Guid refid)
         {
             using (var npgConnection = new NpgsqlConnection(ConnectionString))
             {

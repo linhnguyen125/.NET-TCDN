@@ -17,6 +17,69 @@ namespace MISA.WebApi.Controllers
         }
 
         /// <summary>
+        /// Hàm insert phiếu chi
+        /// </summary>
+        /// <param name="payment"></param>
+        /// <returns></returns>
+        /// CreatedBy: NVLINH 23/04/2022
+        [HttpPost("full")]
+        public IActionResult InsertFull(CaPayment payment)
+        {
+            try
+            {
+                var res = _caPaymentRepository.InsertFull(payment);
+                if (res > 0)
+                {
+                    var notify = new NotifyService();
+                    return StatusCode(201,
+                        notify.Success
+                        (
+                            devMsg: MISA.Core.Resources.ResourceVN.Success_Created,
+                            userMsg: MISA.Core.Resources.ResourceVN.Success_Created,
+                            data: payment,
+                            statusCode: 201
+                        ));
+                }
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
+
+        /// <summary>
+        /// Hàm insert phiếu chi
+        /// </summary>
+        /// <param name="payment"></param>
+        /// <returns></returns>
+        /// CreatedBy: NVLINH 23/04/2022
+        [HttpPut("full")]
+        public IActionResult UpdateFull(CaPayment payment)
+        {
+            try
+            {
+                var res = _caPaymentRepository.UpdateFull(payment);
+                if (res > 0)
+                {
+                    var notify = new NotifyService();
+                    return Ok(notify.Success(
+                            devMsg: MISA.Core.Resources.ResourceVN.Success_Updated,
+                            userMsg: MISA.Core.Resources.ResourceVN.Success_Updated,
+                            data: payment,
+                            statusCode: 200
+                        )
+                    );
+                }
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
+
+        /// <summary>
         /// Lấy danh sách nhân viên có phân trang
         /// </summary>
         /// <param name="filterObject"></param>
@@ -28,6 +91,20 @@ namespace MISA.WebApi.Controllers
             try
             {
                 var res = _caPaymentRepository.GetPaging(filterObject);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
+
+        [HttpGet("newPaymentCode")]
+        public IActionResult GetNewPaymentCode()
+        {
+            try
+            {
+                var res = _caPaymentRepository.GetNewPaymentCode();
                 return Ok(res);
             }
             catch (Exception ex)

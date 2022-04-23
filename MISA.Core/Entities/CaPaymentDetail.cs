@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MISA.Core.Entities
 {
-    public class CaPaymentDetail
+    public class CaPaymentDetail : BaseEntity
     {
         [MISAKey]
         [MISAColumn]
@@ -29,7 +29,7 @@ namespace MISA.Core.Entities
         public string? credit_account { get; set; }
 
         [MISAColumn]
-        public string? debit_account { get; set; }
+        public string debit_account { get; set; }
 
         [MISAColumn]
         public string? description { get; set; }
