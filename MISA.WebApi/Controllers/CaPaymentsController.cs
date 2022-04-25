@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MISA.Core.Entities;
+using MISA.Core.Exceptions;
 using MISA.Core.Interfaces;
 using MISA.Core.Interfaces.Base;
 
@@ -42,6 +43,10 @@ namespace MISA.WebApi.Controllers
                 }
                 return Ok(res);
             }
+            catch (ValidateException ex)
+            {
+                return HandleValidateException(ex);
+            }
             catch (Exception ex)
             {
                 return HandleException(ex);
@@ -72,6 +77,10 @@ namespace MISA.WebApi.Controllers
                     );
                 }
                 return Ok();
+            }
+            catch (ValidateException ex)
+            {
+                return HandleValidateException(ex);
             }
             catch (Exception ex)
             {

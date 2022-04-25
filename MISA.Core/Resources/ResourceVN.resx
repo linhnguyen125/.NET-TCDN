@@ -141,6 +141,9 @@
   <data name="ValidateError_DuplicateEmployeeCode" xml:space="preserve">
     <value>Mã nhân viên &lt;{0}&gt; đã tồn tại trong hệ thống, vui lòng kiểm tra lại.</value>
   </data>
+  <data name="ValidateError_DuplicateEntityCode" xml:space="preserve">
+    <value>Mã {0} &lt;{1}&gt; đã tồn tại trong hệ thống, vui lòng kiểm tra lại.</value>
+  </data>
   <data name="ValidateError_Invalid" xml:space="preserve">
     <value>Dữ liệu đầu vào không hợp lệ.</value>
   </data>

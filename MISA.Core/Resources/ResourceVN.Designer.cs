@@ -133,6 +133,15 @@ namespace MISA.Core.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mã {0} &lt;{1}&gt; đã tồn tại trong hệ thống, vui lòng kiểm tra lại..
+        /// </summary>
+        public static string ValidateError_DuplicateEntityCode {
+            get {
+                return ResourceManager.GetString("ValidateError_DuplicateEntityCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dữ liệu đầu vào không hợp lệ..
         /// </summary>
         public static string ValidateError_Invalid {

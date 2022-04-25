@@ -10,5 +10,6 @@ namespace MISA.Core.Interfaces
 {
     public interface ICaPaymentService : IBaseService<CaPayment>
     {
+
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MISA.Core.Entities
 {
+    [MISATable("Nhà cung cấp")]
     public class AccountObject : BaseEntity
     {
         /// <summary>
@@ -20,6 +21,7 @@ namespace MISA.Core.Entities
         /// </summary>
         [MISAColumn]
         [MISARequired]
+        [MISADisplayName("Mã nhà cung cấp")]
         public string? account_object_code { get; set; }
 
         /// <summary>
@@ -27,6 +29,7 @@ namespace MISA.Core.Entities
         /// </summary>
         [MISAColumn]
         [MISARequired]
+        [MISADisplayName("Tên nhà cung cấp")]
         public string? account_object_name { get; set; }
 
         /// <summary>
@@ -195,7 +198,7 @@ namespace MISA.Core.Entities
         /// id nhóm nhà cung cấp
         /// </summary>
         [MISAColumn]
-        public Guid? account_object_group_id { get; set; }
+        public string? account_object_group_id { get; set; }
 
         /// <summary>
         /// số ngày được nợ

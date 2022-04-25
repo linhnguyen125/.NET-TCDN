@@ -54,5 +54,19 @@ namespace MISA.WebApi.Controllers
                 return HandleException(ex);
             }
         }
+
+        [HttpGet("newAccountObjectCode")]
+        public IActionResult GetNewCode()
+        {
+            try
+            {
+                var res = _accountObjectRepository.GetNewtCode();
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return HandleException(ex);
+            }
+        }
     }
 }

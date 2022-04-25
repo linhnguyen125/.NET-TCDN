@@ -217,7 +217,7 @@ namespace MISA.WebApi.Controllers
         /// <param name="ex"></param>
         /// <returns></returns>
         /// CreatedBy: NVLINH (09/03/2022)
-        private IActionResult HandleValidateException(ValidateException ex)
+        protected IActionResult HandleValidateException(ValidateException ex)
         {
             var notify = new NotifyService();
             notify.DevMsg = ex.Message;

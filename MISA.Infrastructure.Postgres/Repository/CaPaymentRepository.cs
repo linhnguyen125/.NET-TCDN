@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using MISA.Core.Entities;
+using MISA.Core.Exceptions;
 using MISA.Core.Interfaces;
 using Npgsql;
 using System;
@@ -13,6 +14,8 @@ namespace MISA.Infrastructure.Postgres.Repository
 {
     public class CaPaymentRepository : BaseRepository<CaPayment>, ICaPaymentRepository
     {
+        //Khai báo biến chứa lỗi
+        public Dictionary<string, string> errorData = new Dictionary<string, string>();
         /// <summary>
         /// Hàm thêm mới phiếu chi
         /// </summary>
@@ -25,6 +28,12 @@ namespace MISA.Infrastructure.Postgres.Repository
             var id = Guid.NewGuid();
             payment.ca_payment_id = id;
             payment.created_date = DateTime.UtcNow;
+            // check trùng mã
+            if (CheckDuplicateCode(payment.ca_payment_code))
+            {
+                errorData.Add($"{_tableName}_code", String.Format(Core.Resources.ResourceVN.ValidateError_DuplicateEntityCode, "Phiếu chi", payment.ca_payment_code));
+                throw new ValidateException(Core.Resources.ResourceVN.ValidateError_Invalid, errorData);
+            }
 
             using (var trxScope = new TransactionScope())
             {
@@ -72,6 +81,10 @@ namespace MISA.Infrastructure.Postgres.Repository
         /// CreatedBy: NVLINH(19/04/2022)
         public int UpdateFull(CaPayment payment)
         {
+            if (CheckDuplicateCode(payment.ca_payment_id, payment.ca_payment_code))
+            {
+                errorData.Add($"{_tableName}_code", String.Format(Core.Resources.ResourceVN.ValidateError_DuplicateEntityCode, "Phiếu chi", payment.ca_payment_code));
+            }
             using (var trxScope = new TransactionScope())
             {
                 try
@@ -261,13 +274,50 @@ namespace MISA.Infrastructure.Postgres.Repository
             }
         }
 
-        //private int IntLength(int i)
-        //{
-        //    if (i < 0)
-        //        return 0;
-        //    if (i == 0)
-        //        return 1;
-        //    return (int)Math.Floor(Math.Log10(i)) + 1;
-        //}
+        /// <summary>
+        /// Kiểm tra mã trùng create
+        /// </summary>
+        /// <param name="payment_code"></param>
+        /// <returns>
+        /// true - đã bị trùng, false - không bị trùng
+        /// </returns>
+        /// CreatedBy NVLINH (11/04/2022)
+        private bool CheckDuplicateCode(string payment_code)
+        {
+            using (var npgConnection = new NpgsqlConnection(ConnectionString))
+            {
+                var sqlCommand = $"SELECT {_tableName}_code FROM {_tableName} WHERE {_tableName}_code = @{_tableName}_code";
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add($"{_tableName}_code", payment_code);
+                var res = npgConnection.QueryFirstOrDefault<string>(sql: sqlCommand, param: parameters);
+                if (res == null)
+                    return false;
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Kiểm tra mã trùng update
+        /// </summary>
+        /// <param name="payment_id"></param>
+        /// <param name="payment_code"></param>
+        /// <returns>
+        /// true - đã bị trùng, false - không bị trùng
+        /// </returns>
+        /// CreatedBy NVLINH (11/04/2022)
+        private bool CheckDuplicateCode(Guid payment_id, string payment_code)
+        {
+            using (var npgConnection = new NpgsqlConnection(ConnectionString))
+            {
+                var sqlCommand = $"SELECT {_tableName}_code FROM {_tableName} WHERE {_tableName}_code = @{_tableName}_code AND {_tableName}_id NOT IN (@{_tableName}_id)";
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add($"{_tableName}_code", payment_code);
+                parameters.Add($"@{_tableName}_id", payment_id);
+                var res = npgConnection.QueryFirstOrDefault<string>(sql: sqlCommand, param: parameters);
+                if (res == null)
+                    return false;
+                return true;
+            }
+        }
     }
 }

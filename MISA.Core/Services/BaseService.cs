@@ -14,11 +14,12 @@ namespace MISA.Core.Services
         IBaseRepository<MISAEntity> _baseRepository;
         //Khai báo biến chứa lỗi
         public Dictionary<string, string> errorData;
-
+        protected string _tableName = string.Empty;
         public BaseService(IBaseRepository<MISAEntity> baseRepository)
         {
             _baseRepository = baseRepository;
             errorData = new Dictionary<string, string>();
+            _tableName = ToUnderscoreCase(typeof(MISAEntity).Name);
         }
 
         /// <summary>
@@ -82,6 +83,31 @@ namespace MISA.Core.Services
             var isValid = true;
             //1. Quét toàn bộ properties
             var properties = entity.GetType().GetProperties();
+            var tableDisplay = GetTableName<MISAEntity>();
+            var id = entity.GetType().GetProperty($"{_tableName}_id").GetValue(entity);
+            var code = entity.GetType().GetProperty($"{_tableName}_code").GetValue(entity);
+            //check trùng mã đầu tiên
+            if (mode == MISAFormMode.Create.ToString())
+            {
+                if (_baseRepository.CheckDuplicateCode(code.ToString()))
+                {
+                    errorData.Add($"{_tableName}_code", String.Format(Resources.ResourceVN.ValidateError_DuplicateEntityCode, tableDisplay, code.ToString()));
+                    isValid = false;
+                }
+            }
+            else
+            {
+                if (_baseRepository.CheckDuplicateCode((Guid)id, code.ToString()))
+                {
+                    errorData.Add($"{_tableName}_code", String.Format(Resources.ResourceVN.ValidateError_DuplicateEntityCode, tableDisplay, code.ToString()));
+                    isValid = false;
+                }
+            }
+            if (errorData.Count > 0)
+            {
+                throw new ValidateException(Resources.ResourceVN.ValidateError_Invalid, errorData);
+            }
+
             foreach (var property in properties)
             {
                 //Lấy ra tên của prop
@@ -179,6 +205,27 @@ namespace MISA.Core.Services
             {
                 return false;
             }
+        }
+
+        protected string ToUnderscoreCase(string str)
+        {
+            return string.Concat(str.Select((x, i) => i > 0 && char.IsUpper(x) ? "_" + x.ToString() : x.ToString())).ToLower();
+        }
+
+        //protected string GetTableName()
+        //{
+        //    var tableAttribute = (MISATable)Attribute.GetCustomAttributes(typeof(MISATable)).FirstOrDefault();
+        //    return tableAttribute.DisplayName;
+        //}
+
+        public string GetTableName<T>()
+        {
+            var tableAttribute = typeof(T).GetCustomAttributes(typeof(MISATable), true).FirstOrDefault() as MISATable;
+            if (tableAttribute != null)
+            {
+                return tableAttribute.DisplayName;
+            }
+            return null;
         }
     }
 }

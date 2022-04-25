@@ -110,5 +110,31 @@ namespace MISA.Infrastructure.Postgres.Repository
                 return res;
             }
         }
+
+        /// <summary>
+        /// Lấy mã nhà cung cấp mới
+        /// </summary>
+        /// <returns></returns>
+        public string GetNewtCode()
+        {
+            string prefix = "NCC";
+            var postFix = 0;
+            using (var npgConnection = new NpgsqlConnection(ConnectionString))
+            {
+                // Câu lệnh truy vấn
+                var sqlCommand = $"SELECT substring(account_object_code, '[0-9]+') as amount FROM {_tableName}";
+                // Lấy dữ liệu
+                var res = npgConnection.Query<int>(sql: sqlCommand);
+                // Lấy số lớn nhất trong hệ thống + 1
+                int max = 0;
+                if (res.Count() > 0)
+                {
+                    max = res.Max();
+                }
+                postFix = max + 1;
+                // Trả về mã mới nhất tăng thêm 1
+                return prefix + postFix;
+            }
+        }
     }
 }

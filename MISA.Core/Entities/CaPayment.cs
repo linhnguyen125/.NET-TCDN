@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace MISA.Core.Entities
 {
+    [MISATable("Phiếu chi")]
     public class CaPayment : BaseEntity
     {
         /// <summary>

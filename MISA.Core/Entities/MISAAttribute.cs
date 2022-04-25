@@ -59,4 +59,18 @@ namespace MISA.Core.Entities
     {
 
     }
+
+    /// <summary>
+    /// Attribute quy định display name cho class
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class)]
+    public class MISATable : Attribute
+    {
+        public string DisplayName;
+
+        public MISATable(string propName)
+        {
+            this.DisplayName = propName;
+        }
+    }
 }

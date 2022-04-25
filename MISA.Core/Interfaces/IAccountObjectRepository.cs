@@ -13,5 +13,7 @@ namespace MISA.Core.Interfaces
         public Object GetPaging(FilterObject filterObject);
 
         public Object GetByCode(string account_object_code);
+
+        public string GetNewtCode();
     }
 }
