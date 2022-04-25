@@ -108,6 +108,11 @@ namespace MISA.WebApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Hàm lấy mã phiếu chi mới
+        /// </summary>
+        /// <returns></returns>
+        /// CreatedBy: NVLINH (18/04/2022)
         [HttpGet("newPaymentCode")]
         public IActionResult GetNewPaymentCode()
         {
@@ -120,6 +125,19 @@ namespace MISA.WebApi.Controllers
             {
                 return HandleException(ex);
             }
+        }
+
+        /// <summary>
+        /// Export dữ liệu ra file excel
+        /// </summary>
+        /// <param name="tableExports"></param>
+        /// <returns></returns>
+        /// CreatedBy: NVLINH (018/03/2022)
+        [HttpPost("export")]
+        public IActionResult Export(FilterObject filterObject)
+        {
+            var stream = _caPaymentService.Export(filterObject);
+            return File(stream, "application/octet-stream");
         }
     }
 }

@@ -210,12 +210,16 @@ namespace MISA.Infrastructure.Postgres.Repository
 
                 //1.câu lệnh truy vấn số bản ghi phù hợp với AccountFilter
                 var sqlCommand = @$"SELECT COUNT(1) FROM {_tableName} WHERE {sb.ToString()};
-                                SELECT * FROM {_tableName} WHERE {sb.ToString()} LIMIT @Limit OFFSET @Offset";
+                                SELECT SUM(total_amount) from {_tableName};
+                                SELECT * FROM {_tableName} WHERE {sb.ToString()} order by modified_date desc LIMIT @Limit OFFSET @Offset";
 
                 //thực hiện query multiple
                 var multi = npgConnection.QueryMultiple(sqlCommand, param: parameters);
                 //trả về tổng số bản ghi
                 var totalRecord = multi.Read<int>().Single();
+
+                //trả về total amount
+                var totalAmount = multi.Read<decimal>().Single();
 
                 //trả về danh sách nhân viên
                 var entities = multi.Read<CaPayment>().ToList();
@@ -240,7 +244,8 @@ namespace MISA.Infrastructure.Postgres.Repository
                 {
                     Data = entities,
                     TotalRecord = totalRecord,
-                    TotalPage = totalPage
+                    TotalPage = totalPage,
+                    TotalAmount = totalAmount,
                 };
                 //trả kết quả cho client
                 return data;

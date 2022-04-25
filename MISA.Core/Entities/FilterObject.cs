@@ -17,5 +17,7 @@ namespace MISA.Core.Entities
         public string? txt_search { get; set; }
 
         public string[] columns { get; set; }
+
+        public List<TableExport>? tableExport { get; set; }
     }
 }
